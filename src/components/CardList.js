@@ -1,27 +1,23 @@
 import React from 'react';
-import Taipei from './divisions/Taipei';
-import NewTaipei from './divisions/NewTaipei';
-import Kaohsiung from './divisions/Kaohsiung';
-import Tainan from './divisions/Tainan';
-import Taichung from './divisions/Taichung';
-import Taoyuan from './divisions/Taoyuan';
+import Card from './Card';
 
-const CardList = ({ cities, i }) => {
-
-  const admin =  [
-    <Taipei key='a' name='Taipei' />, 
-    <NewTaipei key='b' name='NewTaipei'/>,
-    <Taoyuan key='c' name='Taoyuan'/>,
-    <Taichung key='d' name='Taichung'/>,
-    <Tainan key='e' name='Tainan' />,
-    <Kaohsiung key='f' name='Kaohsiung'/>,
-    ];
-  
-  return (
-    <div> 
-      {admin}
-    </div>
+const CardList = ({cities}) => {
+  const cardArray = cities.map((user, i) => {
+      return (
+          <Card 
+              key={i} 
+              id={cities[i].id} 
+              name={cities[i].name} 
+              site={cities[i].site} 
+              pic={cities[i].pic}
+              />  
+      ); 
+  })
+  return(
+      <div>
+          {cardArray}
+      </div>
   );
-}
+};
 
 export default CardList;

@@ -30,7 +30,7 @@ class App extends Component {
           <h1 className='f1'>Taiwan Cities</h1>
           <SearchBox searchChange={this.onSearchChange}/>
           <Scroll>
-            <CardList cities={this.state.searchfield} />
+            <CardList cities={filteredCities} />
           </Scroll>
         </div>
       );
